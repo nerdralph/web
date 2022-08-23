@@ -7,19 +7,19 @@
   <body style="background-color:LightSkyBlue;">
     <h1 style="color:DarkGreen;">Solar Si</h1>
     <p>Helping Nova Scotians save energy.</p>
-    <label>AAN:</label>
-    <input id="TaxNumber" type="tel" minlength="8" maxlength="8" size="8" pattern="[0-9]+" onblur="fillAddr(this)"><br>
-    <label>Name First:</label> <input type="text" id="First">
-    <label>Last:</label> <input type="text" id="Last"><br>
-    <label>Telephone:</label> <input type="tel" id="Telephone">
-	<br>Year Built: <output id="year"></output>
-	<br>Street: <output id="street"></output>
-    <br>City: <output id="city"></output>
-    <br>Postal Code: <output id="postal"></output>
-    <br>Weather: <output id="weather"></output>
-    <br>ghwiz inputs: fileid template.h2k afl-height fperim farea [ta_delta] [afl_perim]
-    <br><input type="text" size="60">
-    <br><input type="submit" value="submit">
+    <form action="http://solarsi.ca/cgi-bin/printenv" method="get">
+    8-digit AAN: <input name="AAN" type="tel" minlength="8" maxlength="8" size="8" pattern="[0-9]+" onblur="findAAN(this.value)"><br>
+    Name First: <input id="First"> Last: <input id="Last"><br>
+    Telephone:<input type="tel" id="Telephone"><br>
+	AAN data: <output name="aanData"></output><br>
+	Street: <output id="street"></output><br>
+    Postal Code: <input name="postal" readonly><br>
+    Weather: <input name="weather" readonly><br>
+    ghwiz inputs: fileid template.h2k afl-height fperim farea [ta_delta] [afl_perim]<br>
+    <input size="60" name="args"><br>
+    <input type="submit" value="submit">
+    </form>
 	<script src="aan.js"></script>
   </body>
 </html>
+
