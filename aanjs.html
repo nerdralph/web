@@ -8,24 +8,18 @@
     <h1 style="color:DarkGreen;">Solar Si</h1>
     <p>Helping Nova Scotians save energy.</p>
     <label>AAN:</label>
-    <input type="tel" minlength="8" maxlength="8" size="8" pattern="[0-9]+" onblur="fillAddr(this)">
-	<div>
-    <label id="addr">data: </label>
-	<script>
-    "use strict";
-    const AAN76 = "07880782";
-    const AAN126 = "03298671"
-    function fetchAAN(aan) {
-        fetch("https://www.thedatazone.ca/resource/a859-xvcs.json?aan=" + aan)
-            .then(response => response.json())
-            .then(data => document.getElementById("addr").innerHTML = "data: " + JSON.stringify(data[0]));
-            //.then(data => document.getElementById("addr").value = JSON.stringify(data[0]));
-            //.then(data => console.log(data[0]["address_street"]));
-    }
-	function fillAddr(e) {
-        //document.getElementById("addr").value = "123 MAIN ST";
-        fetchAAN(e.value);
-    }
-	</script>
+    <input id="TaxNumber" type="tel" minlength="8" maxlength="8" size="8" pattern="[0-9]+" onblur="fillAddr(this)"><br>
+    <label>Name First:</label> <input type="text" id="First">
+    <label>Last:</label> <input type="text" id="Last"><br>
+    <label>Telephone:</label> <input type="tel" id="Telephone">
+	<br>Year Built: <output id="year"></output>
+	<br>Street: <output id="street"></output>
+    <br>City: <output id="city"></output>
+    <br>Postal Code: <output id="postal"></output>
+    <br>Weather: <output id="weather"></output>
+    <br>ghwiz inputs: fileid template.h2k afl-height fperim farea [ta_delta] [afl_perim]
+    <br><input type="text" size="60">
+    <br><input type="submit" value="submit">
+	<script src="aan.js"></script>
   </body>
 </html>
