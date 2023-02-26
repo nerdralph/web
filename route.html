@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body style="background-color:LightSkyBlue;">
+    <h1 style="color:DarkGreen;">Solar Si</h1>
+    <p>Helping Nova Scotia save energy.</p>
+    <p>Route Calculator</p>
+    <form id="routes">
+        AAN1 <input name="AAN1" type="tel" minlength="8" maxlength="8" size=8 pattern="[0-9]+" onBlur="aanWKID(this)">
+      coords: <output name="wkid1"></output><br>
+      AAN2 <input name="AAN2" type="tel" minlength="8" maxlength="8" size=8 pattern="[0-9]+" onBlur="aanWKID(this)">
+      coords: <output name="wkid2"></output><br>
+      AAN3 <input name="AAN3" type="tel" minlength="8" maxlength="8" size=8 pattern="[0-9]+" onBlur="aanWKID(this)">
+      coords: <output name="wkid3"></output><br>
+      AAN1 to AAN2: <output name="dist2"></output><br>
+      AAN1 to AAN3: <output name="dist3"></output><br>
+      <input type="button" value="calculate" onClick="distance()">
+    </form>
+    <script src="router.js"></script>
+  </body>
+</html>
+
